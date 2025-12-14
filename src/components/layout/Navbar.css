@@ -1,0 +1,167 @@
+/* ============================================
+   NAVBAR - FIFA STREET STYLE
+   ============================================ */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  border-bottom: 3px solid #ff6b00;
+  box-shadow: 0 4px 15px rgba(255, 107, 0, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-brand {
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar-brand h2 {
+  color: #ff6b00;
+  font-size: 1.5rem;
+  font-weight: 900;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  letter-spacing: 2px;
+}
+
+.navbar-subtitle {
+  color: #ffd700;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.navbar-menu {
+  display: flex;
+  gap: 0.5rem;
+  flex: 1;
+  justify-content: center;
+  max-width: 600px;
+}
+
+.navbar-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.75rem 1.25rem;
+  background: rgba(255, 107, 0, 0.1);
+  border: 2px solid transparent;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.navbar-item:hover {
+  background: rgba(255, 107, 0, 0.2);
+  border-color: #ff6b00;
+  transform: translateY(-2px);
+}
+
+.navbar-item.active {
+  background: #ff6b00;
+  border-color: #ffd700;
+  box-shadow: 0 4px 15px rgba(255, 107, 0, 0.4);
+}
+
+.navbar-icon {
+  font-size: 1.5rem;
+}
+
+.navbar-label {
+  font-size: 0.7rem;
+}
+
+.navbar-user {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.user-name {
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.user-badge {
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.user-badge.admin {
+  background: linear-gradient(135deg, #ff0000 0%, #ff6b00 100%);
+  color: #fff;
+}
+
+.user-badge.player {
+  background: linear-gradient(135deg, #ffd700 0%, #ffaa00 100%);
+  color: #1a1a1a;
+}
+
+.btn-logout {
+  padding: 0.6rem 1.2rem;
+  background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%);
+  color: #fff;
+  border: 2px solid #ff6b00;
+  border-radius: 8px;
+  font-weight: 900;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-logout:hover {
+  background: linear-gradient(135deg, #cc0000 0%, #990000 100%);
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(255, 0, 0, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .navbar-menu {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .navbar-item {
+    flex: 1;
+    padding: 0.5rem;
+  }
+
+  .navbar-label {
+    display: none;
+  }
+
+  .navbar-icon {
+    font-size: 1.2rem;
+  }
+}

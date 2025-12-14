@@ -1,0 +1,11 @@
+/* ============================================
+   APP.CSS - ESTILOS GLOBALES
+   ============================================ */
+
+/* Este archivo contiene estilos globales y utilitarios
+   Los estilos específicos están en los archivos CSS de cada componente */
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}

@@ -1,0 +1,63 @@
+/* ============================================
+   RESET Y FUENTE BASE
+   ============================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  
+  /* Paleta de colores FIFA Street 2 */
+  --primary-orange: #ff6b00;
+  --secondary-orange: #ff8c1a;
+  --light-orange: #ffa64d;
+  --primary-yellow: #ffd700;
+  --secondary-yellow: #ffed4e;
+  --primary-black: #1a1a1a;
+  --secondary-black: #2d2d2d;
+  --dark-gray: #404040;
+  --light-gray: #cccccc;
+  --white: #ffffff;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: var(--primary-black);
+  color: var(--white);
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* ============================================
+   SCROLLBAR PERSONALIZADO
+   ============================================ */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--primary-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-orange);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-orange);
+}

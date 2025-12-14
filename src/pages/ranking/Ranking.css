@@ -1,0 +1,182 @@
+/* ============================================
+   PÁGINA DE RANKING
+   ============================================ */
+
+.ranking-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.podium {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  padding: 2rem;
+}
+
+.podium-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1.5rem;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  min-width: 200px;
+}
+
+.podium-1 {
+  background: linear-gradient(135deg, #ffd700 0%, #ffaa00 100%);
+  border: 3px solid #ff6b00;
+  order: 2;
+  transform: scale(1.1);
+  box-shadow: 0 8px 30px rgba(255, 215, 0, 0.5);
+}
+
+.podium-2 {
+  background: linear-gradient(135deg, #c0c0c0 0%, #a0a0a0 100%);
+  border: 3px solid #ff6b00;
+  order: 1;
+  box-shadow: 0 4px 20px rgba(192, 192, 192, 0.3);
+}
+
+.podium-3 {
+  background: linear-gradient(135deg, #cd7f32 0%, #b87333 100%);
+  border: 3px solid #ff6b00;
+  order: 3;
+  box-shadow: 0 4px 20px rgba(205, 127, 50, 0.3);
+}
+
+.podium-medal {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+.podium-name {
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: #1a1a1a;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+.podium-points {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #1a1a1a;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+.ranking-table {
+  background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+  border: 3px solid #ff6b00;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(255, 107, 0, 0.3);
+}
+
+.ranking-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.ranking-table thead {
+  background: rgba(255, 107, 0, 0.2);
+}
+
+.ranking-table th {
+  padding: 1.5rem 1rem;
+  color: #ffd700;
+  font-weight: 900;
+  font-size: 0.9rem;
+  text-align: left;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-bottom: 2px solid #ff6b00;
+}
+
+.ranking-table tbody tr {
+  border-bottom: 1px solid rgba(255, 107, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.ranking-table tbody tr:hover {
+  background: rgba(255, 107, 0, 0.1);
+}
+
+.ranking-table tbody tr.top-three {
+  background: rgba(255, 215, 0, 0.1);
+}
+
+.ranking-table td {
+  padding: 1.25rem 1rem;
+  color: #fff;
+  font-weight: 600;
+}
+
+.posicion {
+  width: 100px;
+  text-align: center;
+}
+
+.posicion-badge {
+  display: inline-block;
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+
+.nombre {
+  font-weight: 900;
+  color: #fff;
+  font-size: 1.1rem;
+}
+
+.email {
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+.puntos {
+  text-align: center;
+  width: 150px;
+}
+
+.puntos-badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, #ff6b00 0%, #ff8c00 100%);
+  border: 2px solid #ffd700;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 900;
+  font-size: 1.2rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+  .podium {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .podium-item {
+    width: 100%;
+    order: initial !important;
+    transform: none !important;
+  }
+
+  .ranking-table {
+    overflow-x: auto;
+  }
+
+  .ranking-table table {
+    min-width: 600px;
+  }
+
+  .email {
+    display: none;
+  }
+}
