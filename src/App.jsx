@@ -5,6 +5,7 @@ import Login from './pages/auth/Login';
 import Register from './pages/auth/Register';
 import AdminDashboard from './pages/dashboard/AdminDashboard';
 import UserDashboard from './pages/dashboard/UserDashboard';
+import TodosPronosticos from './pages/admin/TodosPronosticos';
 import PartidosPage from './pages/partidos/PartidosPage';
 import PronosticosPage from './pages/pronosticos/PronosticosPage';
 import RankingPage from './pages/ranking/RankingPage';
@@ -58,6 +59,14 @@ function App() {
             element={
               <ProtectedRoute>
                 <RankingPage />
+              </ProtectedRoute>
+            } 
+          />
+          <Route 
+            path="/pronosticos" 
+            element={
+              <ProtectedRoute requireAdmin={true}>
+                <TodosPronosticos />
               </ProtectedRoute>
             } 
           />

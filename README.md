@@ -1,16 +1,162 @@
-# React + Vite
+# 🎮 MUNDIAL SCORE
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Sistema de apuestas de marcadores para el Mundial 2026
 
-Currently, two official plugins are available:
+## 🚀 Inicio Rápido
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Backend (Spring Boot)
+```bash
+cd MundialScore
+./mvnw spring-boot:run
+```
+El backend estará corriendo en `http://localhost:8080`
 
-## React Compiler
+### Frontend (React + Vite)
+```bash
+cd MundialFrontend
+npm install
+npm run dev
+```
+El frontend estará corriendo en `http://localhost:5173`
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 👥 Usuarios Precargados
 
-## Expanding the ESLint configuration
+### Administradores (ROLE_ADMIN)
+- **Email:** carlos.angarita@mundial.com  
+  **Contraseña:** admin123
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Email:** admin@mundial.com  
+  **Contraseña:** admin123
+
+### Usuarios de Prueba (ROLE_USER)
+- **Email:** juan.perez@mundial.com  
+  **Contraseña:** user123
+
+- **Email:** maria.garcia@mundial.com  
+  **Contraseña:** user123
+
+## 🔐 Funcionalidades de Autenticación
+
+### Login
+- Autenticación con email y contraseña
+- Validación de credenciales
+- Redirección según rol de usuario
+- Manejo de errores visualizado
+
+### Registro
+- Solo para usuarios apostadores (ROLE_USER)
+- Validación de contraseñas
+- Verificación de email único
+- Login automático después del registro
+
+### Protección de Rutas
+- Rutas públicas: `/login`, `/register`
+- Rutas protegidas: `/dashboard`
+- Redirección automática según autenticación
+- Dashboard diferenciado por rol
+
+## 📊 Dashboards
+
+### Admin Dashboard
+Funcionalidades para administradores:
+- ⚽ Gestionar partidos
+- 👥 Ver usuarios registrados
+- 🎯 Ver todos los pronósticos
+- 🏆 Ver ranking general
+
+
+### User Dashboard
+Funcionalidades para apostadores:
+- ⚽ Ver partidos disponibles
+- 🎯 Hacer pronósticos
+- 📈 Ver mis pronósticos
+- 🏆 Ver ranking
+- 📋 Reglas de puntuación
+
+## 🎯 Sistema de Puntuación
+
+- **5 puntos:** Resultado exacto (ejemplo: 2-1)
+- **3 puntos:** Aciertas ganador o empate
+- **1 punto:** Aciertas goles de algún equipo
+- **0 puntos:** Cualquier otro caso
+
+## 🛠️ Tecnologías Utilizadas
+
+### Backend
+- Java 17+
+- Spring Boot 3
+- Spring Security (Basic Auth)
+- JPA/Hibernate
+- Postgresql Database
+- Maven
+
+### Frontend
+- React 19
+- Vite
+- React Router DOM
+- Axios
+- CSS3
+
+## 📁 Estructura del Proyecto
+
+```
+MundialWeb/
+├── MundialScore/          # Backend Spring Boot
+│   ├── src/
+│   │   ├── main/
+│   │   │   ├── java/
+│   │   │   │   └── com/example/mundialscore/
+│   │   │   │       ├── config/
+│   │   │   │       ├── controller/
+│   │   │   │       ├── dto/
+│   │   │   │       ├── entity/
+│   │   │   │       ├── repository/
+│   │   │   │       ├── security/
+│   │   │   │       └── service/
+│   │   │   └── resources/
+│   │   └── test/
+│   └── pom.xml
+│
+└── MundialFrontend/       # Frontend React
+    ├── src/
+    │   ├── components/
+    │   │   └── auth/
+    │   │       └── ProtectedRoute.jsx
+    │   ├── context/
+    │   │   └── AuthContext.jsx
+    │   ├── pages/
+    │   │   ├── auth/
+    │   │   │   ├── Login.jsx
+    │   │   │   ├── Register.jsx
+    │   │   │   └── Auth.css
+    │   │   └── dashboard/
+    │   │       ├── AdminDashboard.jsx
+    │   │       ├── UserDashboard.jsx
+    │   │       └── Dashboard.css
+    │   ├── services/
+    │   │   └── api.js
+    │   ├── App.jsx
+    │   ├── App.css
+    │   ├── index.css
+    │   └── main.jsx
+    └── package.json
+```
+
+## 🔧 Configuración de CORS
+
+El backend ya está configurado para aceptar peticiones del frontend en desarrollo.
+
+
+## 🎮 ¡Comienza a Apostar!
+
+1. Inicia el backend
+2. Inicia el frontend
+3. Accede a `http://localhost:5173`
+4. Inicia sesión o regístrate
+
+---
+
+### Desarrollado Por:
+- Valerie De los Ángeles Sierra Pabón
+- Raúl David Báez Suárez
+

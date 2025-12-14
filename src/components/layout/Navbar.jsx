@@ -15,6 +15,7 @@ const Navbar = () => {
   const navItems = isAdmin() ? [
     { path: '/dashboard', label: 'INICIO', icon: '🏠' },
     { path: '/partidos', label: 'PARTIDOS', icon: '⚽' },
+    { path: '/pronosticos', label: 'PRONÓSTICOS', icon: '📊' },
     { path: '/ranking', label: 'RANKING', icon: '🏆' }
   ] : [
     { path: '/dashboard', label: 'INICIO', icon: '🏠' },

@@ -23,6 +23,13 @@ const AdminDashboard = () => {
             <button className="card-button">IR A PARTIDOS</button>
           </div>
 
+          <div className="dashboard-card admin-card" onClick={() => navigate('/pronosticos')}>
+            <div className="card-icon">📊</div>
+            <h3>TODOS LOS PRONÓSTICOS</h3>
+            <p>Ver y gestionar apuestas de usuarios</p>
+            <button className="card-button">VER PRONÓSTICOS</button>
+          </div>
+
           <div className="dashboard-card admin-card" onClick={() => navigate('/ranking')}>
             <div className="card-icon">🏆</div>
             <h3>RANKING GENERAL</h3>
