@@ -21,7 +21,8 @@ const Navbar = () => {
     { path: '/dashboard', label: 'INICIO', icon: '🏠' },
     { path: '/partidos', label: 'PARTIDOS', icon: '⚽' },
     { path: '/mis-pronosticos', label: 'MIS PRONÓSTICOS', icon: '🎯' },
-    { path: '/ranking', label: 'RANKING', icon: '🏆' }
+    { path: '/ranking', label: 'RANKING', icon: '🏆' },
+    { path: '/logros', label: 'LOGROS', icon: '🏅' }
   ];
 
   return (

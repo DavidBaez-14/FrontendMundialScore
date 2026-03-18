@@ -9,6 +9,7 @@ import TodosPronosticos from './pages/admin/TodosPronosticos';
 import PartidosPage from './pages/partidos/PartidosPage';
 import PronosticosPage from './pages/pronosticos/PronosticosPage';
 import RankingPage from './pages/ranking/RankingPage';
+import LogrosPage from './pages/logros/LogrosPage';
 import './App.css';
 
 function DashboardRouter() {
@@ -21,6 +22,16 @@ function DashboardRouter() {
   }
   
   return <Navigate to="/login" replace />;
+}
+
+function UserOnlyRoute({ children }) {
+  const { user } = useAuth();
+
+  if (user?.rol !== 'ROLE_USER') {
+    return <Navigate to="/dashboard" replace />;
+  }
+
+  return children;
 }
 
 function App() {
@@ -61,6 +72,16 @@ function App() {
                 <RankingPage />
               </ProtectedRoute>
             } 
+          />
+          <Route
+            path="/logros"
+            element={
+              <ProtectedRoute>
+                <UserOnlyRoute>
+                  <LogrosPage />
+                </UserOnlyRoute>
+              </ProtectedRoute>
+            }
           />
           <Route 
             path="/pronosticos" 

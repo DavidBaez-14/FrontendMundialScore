@@ -1,0 +1,222 @@
+/* ============================================
+   PAGINA LOGROS
+   ============================================ */
+
+.logros-seccion {
+  margin-bottom: 2.5rem;
+}
+
+.logros-seccion-titulo {
+  color: #ff6b00;
+  font-size: 1.1rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0 0 0.75rem 0;
+}
+
+.logros-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 1.1rem;
+}
+
+.medalla-card {
+  position: relative;
+  border-radius: 18px;
+  padding: 1.25rem 1rem 1.35rem;
+  min-height: 330px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  background: linear-gradient(180deg, #71828d 0%, #61717c 100%);
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
+}
+
+.medalla-card:hover {
+  transform: translateY(-4px);
+}
+
+.medalla-card.bloqueada {
+  opacity: 0.45;
+  filter: grayscale(25%);
+}
+
+.medalla-card.obtenida {
+  opacity: 1;
+  border-color: #ff6b00;
+  background: radial-gradient(circle at 25% 18%, #ffe3b0 0%, #ffad44 44%, #f57f17 100%);
+  box-shadow: 0 8px 20px rgba(255, 107, 0, 0.4);
+}
+
+.medalla-imagen-wrap {
+  width: 100%;
+  height: 170px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.65);
+  margin-bottom: 0.8rem;
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.medalla-imagen {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.medalla-card.destacada .medalla-imagen-wrap {
+  height: 190px;
+  border-color: #ffd26a;
+  box-shadow: 0 6px 18px rgba(255, 171, 46, 0.35);
+}
+
+.medalla-card h3 {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: #111;
+}
+
+.medalla-card.bloqueada h3 {
+  color: #f1f1f1;
+}
+
+.medalla-card p {
+  margin: 0.65rem 0 0;
+  font-size: 0.93rem;
+  line-height: 1.35;
+  color: #222;
+  font-weight: 700;
+}
+
+.medalla-card.bloqueada p {
+  color: #ddd;
+}
+
+.medalla-check {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 900;
+  border: 2px solid #fff;
+  background: rgba(210, 220, 225, 0.75);
+  color: #6a7885;
+}
+
+.medalla-card.obtenida .medalla-check {
+  background: #ff6b00;
+  color: #fff;
+}
+
+.medalla-card.bloqueada .medalla-imagen {
+  filter: grayscale(20%);
+}
+
+.logros-error-box {
+  background: linear-gradient(135deg, #2d2d2d 0%, #1c1c1c 100%);
+  border: 2px solid #ff6b00;
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(255, 107, 0, 0.2);
+}
+
+.empty-icon-wrap {
+  width: 112px;
+  height: 112px;
+  margin: 0 auto 1rem;
+  padding: 10px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 107, 0, 0.22) 0%, rgba(255, 107, 0, 0.05) 70%);
+  border: 2px solid rgba(255, 206, 41, 0.6);
+}
+
+.empty-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.logros-error-box h3 {
+  margin: 0 0 0.8rem;
+  color: #ffd700;
+  font-size: 1.2rem;
+}
+
+.logros-error-box p {
+  margin: 0;
+  color: #fff;
+  line-height: 1.5;
+}
+
+.btn-reintentar-logros {
+  margin-top: 1.2rem;
+  border: 2px solid #ffd700;
+  background: linear-gradient(135deg, #ff6b00 0%, #ff8c1a 100%);
+  color: #fff;
+  border-radius: 8px;
+  font-weight: 900;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  padding: 0.7rem 1.2rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-reintentar-logros:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(255, 107, 0, 0.35);
+}
+
+@media (max-width: 768px) {
+  .logros-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .medalla-card {
+    min-height: 280px;
+    padding: 1rem 0.8rem 1.1rem;
+  }
+
+  .medalla-imagen-wrap {
+    height: 130px;
+  }
+
+  .medalla-card.destacada .medalla-imagen-wrap {
+    height: 145px;
+  }
+
+  .medalla-card h3 {
+    font-size: 1.15rem;
+  }
+
+  .medalla-card p {
+    font-size: 0.82rem;
+  }
+
+  .empty-icon-wrap {
+    width: 92px;
+    height: 92px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .logros-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
